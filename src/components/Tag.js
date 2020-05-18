@@ -22,7 +22,7 @@ export default class Tag extends Component {
                         tag => <h1>{tag.tag_name}</h1>
                     )
                 }
-
+                <p>Testing</p>
             </div>
         )
     }
