@@ -7,7 +7,7 @@ class App extends Component {
     return (
       <HashRouter>
         <Switch>
-          <Route path="/" exact component={Tag} />
+          <Route path="/tags/" exact component={Tag} />
         </Switch>
       </HashRouter>
     );
