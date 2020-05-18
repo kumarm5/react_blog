@@ -7,7 +7,7 @@ export default class Tag extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://kumarm5.pythonanywhere.com/api/tag/')
+        axios.get('https://kumarm5.pythonanywhere.com/api/tag/')
             .then(res => {
                 const tags = res.data;
                 this.setState({ tags });
