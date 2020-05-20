@@ -5,11 +5,12 @@ import Tag from './components/Tag';
 class App extends Component {
   render() {
     return (
-      <HashRouter>
-        <Switch>
-          <Route path="/" exact component={Tag} />
-        </Switch>
-      </HashRouter>
+      // <HashRouter>
+      //   <Switch>
+      //     <Route path="/" exact component={Tag} />
+      //   </Switch>
+      // </HashRouter>
+      <h1>Hello World</h1>
     );
   }
 }
