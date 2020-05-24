@@ -16,13 +16,15 @@ export default class Tag extends Component {
 
     render() {
         return (
-            <div>
-                {
-                    this.state.tags.map(
-                        tag => <h1>{tag.tag_name}</h1>
-                    )
-                }
-                <p>Testing</p>
+            <div className="container">
+
+                <div className="row">
+                    <div className="col-md-12 text-center">
+                        <br/>
+                        <p className="text-danger"><i>Thoughts, stories and ideas.</i></p>
+                        <hr/>
+                    </div>
+                </div>
             </div>
         )
     }

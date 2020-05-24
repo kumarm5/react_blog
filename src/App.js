@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
-import { HashRouter, Switch, Route } from 'react-router-dom';
-import Tag from './components/Tag';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Index from './components/Index';
 
 class App extends Component {
   render() {
     return (
-      <HashRouter>
-        <Switch>
-          <Route path="/" exact component={Tag} />
-        </Switch>
-      </HashRouter>
+      <React.Fragment>
+        <Router>
+          <Switch>
+            <Route exact path="/" component={Index} />
+          </Switch>
+        </Router>
+      </React.Fragment>
     );
   }
 }
