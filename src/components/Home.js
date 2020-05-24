@@ -1,7 +1,21 @@
 import React, { Component } from 'react'
 import ProfileImage from '../assets/images/img_profile.jpg'
+import axios from 'axios';
 
 export default class Home extends Component {
+
+    state = {
+        posts: []
+    }
+
+    componentDidMount() {
+        axios.get('https://kumarm5.pythonanywhere.com/api/blog/')
+            .then(res => {
+                const posts = res.data;
+                this.setState({ posts });
+            })
+    }
+
     render() {
         return (
             <div>
@@ -14,19 +28,19 @@ export default class Home extends Component {
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="banner">
-                                <div class="col-md-9 banner_content">
-                                    <a href="/post/13/" class="category sidebar-btn">Django2-Angular5</a>
+                    <div className="row">
+                        <div className="col-md-12">
+                            <div className="banner">
+                                <div className="col-md-9 banner_content">
+                                    <a href="/post/13/" className="category sidebar-btn">Django2-Angular5</a>
                                     <p>&nbsp;</p>
 
                                     <h2><p>User registration using Angular 5 http post sevice with django rest framework.</p></h2>
 
-                                    <ul class="post_information">
-                                        <li><i class="fa fa-tags"></i><a href="/#">Django</a></li>
-                                        <li><i class="fa fa-calendar"></i>
-                                            <time class="post-date" datetime="2017-11-11">14/04/2019</time>
+                                    <ul className="post_information">
+                                        <li><i className="fa fa-tags"></i><a href="/#">Django</a></li>
+                                        <li><i className="fa fa-calendar"></i>
+                                            <time className="post-date" datetime="2017-11-11">14/04/2019</time>
                                         </li>
                                     </ul>
                                 </div>
@@ -35,27 +49,48 @@ export default class Home extends Component {
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="col-md-9">
+                    <div className="row">
+                        <div className="col-md-9">
+                            {
+                                this.state.posts.map(
+                                    post =>
+                                        <div className="col-md-4 card_container">
+                                            <div className="card">
+                                                <a href="/post/3/"><img className="card-img-top" src={post.post_image} alt="Card image cap" /></a>
+                                                <div className="card-body">
+                                                    <h4><a href={post.id} className="card-title">{post.title}</a></h4>
+                                                    <div className="card-text blog_description"><p>{post.short_description} </p></div>
+                                                    <ul className="post_information">
+                                                        <li><i className="fa fa-tags"></i><a href="#">{post.tag}</a></li>
+                                                        <li><i className="fa fa-calendar"></i>
+                                                            <time className="post-date" datetime="2017-11-11">18/05/2019</time>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <hr />
+                                        </div>
+                                )
+                            }
                         </div>
-                        <div class="col-md-3">
-                            <div class="widget_content">
-                                <div class="widget-title">
+                        <div className="col-md-3">
+                            <div className="widget_content">
+                                <div className="widget-title">
                                     <h4>About Me</h4>
                                 </div>
-                                <div class="widget-content">
-                                    <img src={ProfileImage} class="img-fluid" alt="Profile" />
-                                    <h2><a href="/about/" class="category sidebar-btn">Mukul Kumar</a></h2>
+                                <div className="widget-content">
+                                    <img src={ProfileImage} className="img-fluid" alt="Profile" />
+                                    <h2><a href="/about/" className="category sidebar-btn">Mukul Kumar</a></h2>
                                     <p>My name is Mukul Kumar, I'm a software developer and technology enthusiast from India. At the moment, I'm living in Pune..</p>
                                 </div>
                             </div>
 
                             <hr />
                         </div>
-                        </div>
-
                     </div>
+
                 </div>
-                )
-            }
-        }
+            </div>
+        )
+    }
+}
