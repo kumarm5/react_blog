@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import ProfileImage from '../assets/images/img_profile.jpg'
 
 export default class Home extends Component {
     render() {
@@ -11,14 +12,50 @@ export default class Home extends Component {
                             <p className="text-danger"><i>Thoughts, stories and ideas.</i></p>
                             <hr />
                         </div>
-                        <div className="col-md-12 text-center">
-                            <br />
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="banner">
+                                <div class="col-md-9 banner_content">
+                                    <a href="/post/13/" class="category sidebar-btn">Django2-Angular5</a>
+                                    <p>&nbsp;</p>
+
+                                    <h2><p>User registration using Angular 5 http post sevice with django rest framework.</p></h2>
+
+                                    <ul class="post_information">
+                                        <li><i class="fa fa-tags"></i><a href="/#">Django</a></li>
+                                        <li><i class="fa fa-calendar"></i>
+                                            <time class="post-date" datetime="2017-11-11">14/04/2019</time>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
                             <hr />
                         </div>
                     </div>
+
+                    <div class="row">
+                        <div class="col-md-9">
+                        </div>
+                        <div class="col-md-3">
+                            <div class="widget_content">
+                                <div class="widget-title">
+                                    <h4>About Me</h4>
+                                </div>
+                                <div class="widget-content">
+                                    <img src={ProfileImage} class="img-fluid" alt="Profile" />
+                                    <h2><a href="/about/" class="category sidebar-btn">Mukul Kumar</a></h2>
+                                    <p>My name is Mukul Kumar, I'm a software developer and technology enthusiast from India. At the moment, I'm living in Pune..</p>
+                                </div>
+                            </div>
+
+                            <hr />
+                        </div>
+                        </div>
+
+                    </div>
                 </div>
-            </div>
-        )
-    }
-}
+                )
+            }
+        }
