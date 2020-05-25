@@ -9,7 +9,7 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
-        <Router basename={process.env.PUBLIC_URL + '/react_blog'}>
+        <Router basename={process.env.PUBLIC_URL + '/'}>
           <Switch>
             <Route exact path="/" component={Index} />
             <Route path="/about" component={About} />
