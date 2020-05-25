@@ -9,12 +9,12 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
-        <Router>
+        <Router basename="/react_blog">
           <Switch>
+            <Route exact path="/" component={Index} />
             <Route path="/about" component={About} />
             <Route path="/contact" component={Contact} />
             <Route path="/search" component={Search} />
-            <Route component={Index} />
           </Switch>
         </Router>
       </React.Fragment>
