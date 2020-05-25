@@ -20,11 +20,11 @@ export default class Header extends Component {
         return (
             <div>
                 <Navbar variant="dark" expand="lg">
-                    <Navbar.Brand href="#home">Blog</Navbar.Brand>
+                    <Navbar.Brand href="/">Blog</Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ml-auto">
-                            <Nav.Link href="#home">Home</Nav.Link>
+                            <Nav.Link href="/">Home</Nav.Link>
                             <NavDropdown title="Tags" id="basic-nav-dropdown">
                                 {
                                     this.state.tags.map(
@@ -32,8 +32,9 @@ export default class Header extends Component {
                                     )
                                 }
                             </NavDropdown>
-                            <Nav.Link href="#link">About me</Nav.Link>
-                            <Nav.Link href="#link">Contact</Nav.Link>
+                            <Nav.Link href="/about">About me</Nav.Link>
+                            <Nav.Link href="/contact">Contact</Nav.Link>
+                            <Nav.Link href="/search"><i class="fa fa-search" aria-hidden="true"></i></Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>
