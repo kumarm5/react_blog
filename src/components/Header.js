@@ -32,9 +32,9 @@ export default class Header extends Component {
                                     )
                                 }
                             </NavDropdown>
-                            <Nav.Link href="/about">About me</Nav.Link>
-                            <Nav.Link href="/contact">Contact</Nav.Link>
-                            <Nav.Link href="/search"><i class="fa fa-search" aria-hidden="true"></i></Nav.Link>
+                            <Nav.Link href="#/about">About me</Nav.Link>
+                            <Nav.Link href="#/contact">Contact</Nav.Link>
+                            <Nav.Link href="#/search"><i class="fa fa-search" aria-hidden="true"></i></Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>
