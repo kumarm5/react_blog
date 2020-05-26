@@ -12,9 +12,9 @@ class App extends Component {
         <Router>
           <Switch>
             <Route exact path="/" component={Index} />
-            <Route path="#/about" component={About} />
-            <Route path="#/contact" component={Contact} />
-            <Route path="#/search" component={Search} />
+            <Route path="/about" component={About} />
+            <Route path="/contact" component={Contact} />
+            <Route path="/search" component={Search} />
           </Switch>
         </Router>
       </React.Fragment>
