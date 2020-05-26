@@ -35,7 +35,7 @@ export default class Footer extends Component {
                                         <a href="/#" class="social_icon"><i class="fa fa-instagram" aria-hidden="true"></i></a>
                                         <a href="/#" class="social_icon"><i class="fa fa-github-alt" aria-hidden="true"></i></a>
                                         <br /><br />
-                                        <p><span class="social_icon"><i class="fa fa-envelope" aria-hidden="true"></i></span>email: contact@blog.com</p>
+                                        <p><span class="social_icon"><i class="fa fa-envelope" aria-hidden="true"></i></span>email: mukul@readabilitycounts.co.in</p>
                                     </div>
                                 </div>
                             </div>

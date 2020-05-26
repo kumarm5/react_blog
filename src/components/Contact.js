@@ -23,7 +23,7 @@ export default class Contact extends Component {
                             <p>Hi there!</p>
                             <p>Here you can send me a message, suggest a topic you wanna read about, inform me in case you've found a bug/error, or simply say hello. Anything, really.</p>
                             <p>If you prefer, you can also send me a message directly via </p>
-                            <p><a href="#">abc@gmail.com</a></p>
+                            <p><a href="#">mukul@readabilitycounts.co.in</a></p>
                             <br />
                             <hr />
                             <br />
