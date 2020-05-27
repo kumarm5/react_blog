@@ -1,10 +1,47 @@
 import React, { Component } from 'react'
 import Header from './Header'
 import Footer from './Footer'
+import axios from 'axios';
 import ProfileImage from '../assets/images/img_profile.jpg'
+import ReactDOM from 'react-dom';
 
 export default class Contact extends Component {
+
+    constructor(props){
+        super(props)
+        this.state = {
+            name: '',
+            email: '',
+            message: ''
+        }
+    }
+
+    handleSubmit = (event) => {
+        event.preventDefault()
+        const data = this.state
+        console.log("The input data is ", data)
+        axios.post('https://kumarm5.pythonanywhere.com/api/contact/', this.state)
+        .then(response => {
+            if (response.status == 201){
+                const element = <p><i>Thank you for contacting us. We will get back to you shortly.</i></p>;
+                ReactDOM.render(element, document.getElementById('responseText'));
+            }
+        })
+        .catch(error => {
+            console.log(error);
+        })
+    }
+
+    handleInputChange = (event) => {
+        event.preventDefault()
+        this.setState({
+            [event.target.name]: event.target.value
+        })
+    }
+
     render() {
+        const { name, email, message } = this.state
+
         return (
             <div>
                 <Header />
@@ -28,20 +65,22 @@ export default class Contact extends Component {
                             <hr />
                             <br />
 
-                            <form>
+                            <form onSubmit={this.handleSubmit}>
                                 <div className="form-group">
-                                    <label for="username">Name</label>
-                                    <input type="text" id="username" name="username" placeholder="Enter your name" className="form-control" />
+                                    <label for="name">Name</label>
+                                    <input type="text" id="name" name="name" value={name} placeholder="Enter your name" className="form-control" onChange={this.handleInputChange} />
                                 </div>
                                 <div className="form-group">
                                     <label for="email">Email</label>
-                                    <input type="email" id="email" name="email" placeholder="Enter your email address" className="form-control" />
+                                    <input type="email" id="email" name="email" value={email} placeholder="Enter your email address" className="form-control" onChange={this.handleInputChange} />
                                 </div>
                                 <div className="form-group">
                                     <label for="message">Message</label>
-                                    <textarea className="form-control" placeholder="Hi Mukul"></textarea>
+                                    <textarea className="form-control" name="message" value={message} placeholder="Hi Mukul" onChange={this.handleInputChange} ></textarea>
                                 </div>
                                 <button type="submit" className="btn btn-primary">SEND</button>
+                                <br /><br />
+                                <div id="responseText"></div>
                             </form>
                         </div>
 
