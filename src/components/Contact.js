@@ -19,7 +19,6 @@ export default class Contact extends Component {
     handleSubmit = (event) => {
         event.preventDefault()
         const data = this.state
-        console.log("The input data is ", data)
         axios.post('https://kumarm5.pythonanywhere.com/api/contact/', this.state)
         .then(response => {
             if (response.status == 201){
