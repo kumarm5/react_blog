@@ -47,7 +47,7 @@ export default class Footer extends Component {
                     <div className="container">
                         <div className="row ml-auto">
                             <div className="col-md-12">
-                                <p>&copy; ABC XYZ 2018</p>
+                                <p>&copy; READABILITYCOUNTS 2020</p>
                             </div>
                         </div>
                     </div>

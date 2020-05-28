@@ -56,9 +56,9 @@ export default class Home extends Component {
                                     post =>
                                         <div className="col-md-4 card_container">
                                             <div className="card">
-                                                <a href="/post/3/"><img className="card-img-top" src={post.post_image} alt="Card image cap" /></a>
+                                                <a href={'#/post/'+post.id}><img className="card-img-top" src={post.post_image} alt="Card image cap" /></a>
                                                 <div className="card-body">
-                                                    <h4><a href={post.id} className="card-title">{post.title}</a></h4>
+                                                    <h4><a href={'#/post/'+post.id} className="card-title">{post.title}</a></h4>
                                                     <div className="card-text blog_description"><p>{post.short_description} </p></div>
                                                     <ul className="post_information">
                                                         <li><i className="fa fa-tags"></i><a href="#">{post.tag}</a></li>
