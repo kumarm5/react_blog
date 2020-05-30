@@ -18,7 +18,6 @@ export default class Post extends Component {
         const id = this.props.match.params.id
         axios.get('https://kumarm5.pythonanywhere.com/api/blog/'+id)
             .then(res => {
-                console.log('The log is ', res)
                 const post = res.data;
                 this.setState({ post });
             })

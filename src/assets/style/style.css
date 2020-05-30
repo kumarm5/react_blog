@@ -221,3 +221,7 @@ a:hover{
     color: #fff;
 }
 
+.paginate{
+    color: #1993ff;
+    cursor: pointer;
+}
