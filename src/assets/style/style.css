@@ -225,3 +225,7 @@ a:hover{
     color: #1993ff;
     cursor: pointer;
 }
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #fff;
+}
