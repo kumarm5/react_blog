@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
 import ProfileImage from '../assets/images/img_profile.jpg'
 import axios from 'axios';
+import Header from './Header'
+import Footer from './Footer'
+import 'bootstrap/dist/css/bootstrap.css';
+import '../assets/style/style.css'
 
 export default class Home extends Component {
 
@@ -43,6 +47,7 @@ export default class Home extends Component {
         const { posts, count, next, previous, total_pages, page_number, previous_page_num, next_page_num } = this.state
         return (
             <div>
+                <Header />
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12 text-center">
@@ -80,9 +85,9 @@ export default class Home extends Component {
                                     post =>
                                         <div className="col-md-4 card_container">
                                             <div className="card">
-                                                <a href={'#/post/'+post.id}><img className="card-img-top" src={post.post_image} alt="Card image cap" /></a>
+                                                <a href={'#/post/' + post.id}><img className="card-img-top" src={post.post_image} alt="Card image cap" /></a>
                                                 <div className="card-body">
-                                                    <h4><a href={'#/post/'+post.id} className="card-title">{post.title}</a></h4>
+                                                    <h4><a href={'#/post/' + post.id} className="card-title">{post.title}</a></h4>
                                                     <div className="card-text blog_description"><p>{post.short_description} </p></div>
                                                     <ul className="post_information">
                                                         <li><i className="fa fa-tags"></i><a href="#">{post.tag}</a></li>
@@ -116,7 +121,7 @@ export default class Home extends Component {
                     <div className="row">
                         <div class="col-md-9">
                             <div class="text-center">
-                                <span className="paginate" onClick={() => this.makeHttpRequestWithPage(previous_page_num)}>{!!(previous) ? "previous":"" } </span>
+                                <span className="paginate" onClick={() => this.makeHttpRequestWithPage(previous_page_num)}>{!!(previous) ? "previous" : ""} </span>
                                 <span>
                                     Page {page_number} of {total_pages}.
                                 </span>
@@ -126,6 +131,7 @@ export default class Home extends Component {
                     </div>
 
                 </div>
+                <Footer />
             </div>
         )
     }
