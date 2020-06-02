@@ -11,8 +11,13 @@ export default class Search extends Component {
 
         this.state = {
             posts: [],
-            query: ''
+            query: '',
+            isLoading: true,
         }
+    }
+
+    handleImageLoaded() {
+        this.setState({ isLoading: false });
     }
 
     handleSubmit = (event) => {
@@ -20,7 +25,7 @@ export default class Search extends Component {
         const data = this.state.query
         axios.get('https://kumarm5.pythonanywhere.com/api/blog/?query=' + data)
             .then(response => {
-                const posts = response.data;
+                const posts = response.data.results;
                 this.setState({ posts });
             })
     }
@@ -33,10 +38,13 @@ export default class Search extends Component {
     }
 
     render() {
-        const { query } = this.state.query
+        const { posts, query, isLoading } = this.state
         return (
             <div>
-
+                <div className={isLoading ? "preloader" : "hidden"}>
+                    <div id="status"><i class="fa fa-4x fa-spinner fa-spin" aria-hidden="true"></i></div>
+                </div>
+                <div className={isLoading ? "hidden" : "fadeInTransition"}>
                 <Header />
                 <div class="container">
 
@@ -62,7 +70,7 @@ export default class Search extends Component {
 
                             <div class="mx-sm-3 mb-2">
                                 {
-                                    this.state.posts.map(
+                                    posts.map(
                                         post =>
                                             <p key={post.id}><a href={'#/post/'+post.id}>{post.title}</a></p>
                                     )
@@ -77,7 +85,7 @@ export default class Search extends Component {
                                     <h4>About Me</h4>
                                 </div>
                                 <div class="widget-content">
-                                    <img src={ProfileImage} class="img-fluid" alt="pictures" />
+                                    <img src={ProfileImage} class="img-fluid" alt="pictures" onLoad={this.handleImageLoaded.bind(this)} />
                                     <h2><a href="/about/" class="category sidebar-btn">Mukul Kumar</a></h2>
                                     <p>My name is Mukul Kumar, I'm a software developer and technology enthusiast from India. At the moment, I'm living in Pune..</p>
                                 </div>
@@ -89,6 +97,7 @@ export default class Search extends Component {
                     </div>
                 </div>
                 <Footer />
+                </div>
             </div>
         )
     }

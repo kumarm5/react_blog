@@ -10,8 +10,13 @@ export default class Post extends Component {
         super(props)
 
         this.state = {
-            post: {}
+            post: {},
+            isLoading: true,
         }
+    }
+
+    handleImageLoaded() {
+        this.setState({ isLoading: false });
     }
 
     componentDidMount() {
@@ -27,9 +32,13 @@ export default class Post extends Component {
     }
 
     render() {
-        const data = this.state.post
+        const { post, isLoading } = this.state
         return (
             <div>
+                <div className={isLoading ? "preloader" : "hidden"}>
+                    <div id="status"><i class="fa fa-4x fa-spinner fa-spin" aria-hidden="true"></i></div>
+                </div>
+                <div className={isLoading ? "hidden" : "fadeInTransition"}>
                 <Header />
                 <div className="container">
                     <div className="row">
@@ -42,13 +51,13 @@ export default class Post extends Component {
 
                     <div className="row">
                         <div className="col-md-9">
-                            <h2 className="text-center">{ data.title }</h2>
+                            <h2 className="text-center">{ post.title }</h2>
                             <div className="post_image">
-                                <img src={ data.post_image } className="mx-auto d-block img-fluid" />
+                                <img src={ post.post_image } className="mx-auto d-block img-fluid" onLoad={this.handleImageLoaded.bind(this)} />
                             </div>
                             <div className="post_description">
                                 <br />
-                                <div dangerouslySetInnerHTML={{ __html:data.description }} />
+                                <div dangerouslySetInnerHTML={{ __html:post.description }} />
                             </div>
                             <br />
                             <hr />
@@ -60,7 +69,7 @@ export default class Post extends Component {
                             </div>
                             <br /><br />
                         </div>
-                        <div className="col-md-3">
+                        <div className="col-md-3 sidebar">
                             <div className="widget_content">
                                 <div className="widget-title">
                                     <h4>About Me</h4>
@@ -76,6 +85,7 @@ export default class Post extends Component {
                     </div>
                 </div>
                 <Footer />
+                </div>
             </div>
         )
     }
