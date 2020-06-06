@@ -28,7 +28,7 @@ export default class Header extends Component {
                             <NavDropdown title="Tags" id="basic-nav-dropdown">
                                 {
                                     this.state.tags.map(
-                                        tag => <NavDropdown.Item href="#action/3.1" key={tag.id}>{tag.tag_name}</NavDropdown.Item>
+                                        tag => <NavDropdown.Item href={ '#/tag/'+tag.id }>{tag.tag_name}</NavDropdown.Item>
                                     )
                                 }
                             </NavDropdown>

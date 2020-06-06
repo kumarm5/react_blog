@@ -6,6 +6,7 @@ import Contact from './components/Contact';
 import Search from './components/Search';
 import Post from './components/Post';
 import Error from './components/Error';
+import Tag from './components/Tag';
 
 class App extends Component {
   render() {
@@ -18,6 +19,7 @@ class App extends Component {
             <Route path="/contact" component={Contact} />
             <Route path="/search" component={Search} />
             <Route exact path="/post/:id" component={Post} />
+            <Route exact path="/tag/:id" component={Tag} />
             <Route component={Error}/>
           </Switch>
         </Router>
