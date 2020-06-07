@@ -15,11 +15,11 @@ class App extends Component {
         <Router>
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route path="#/about" component={About} />
-            <Route path="#/contact" component={Contact} />
-            <Route path="#/search" component={Search} />
-            <Route exact path="#/post/:id" component={Post} />
-            <Route exact path="#/tag/:id" component={Tag} />
+            <Route path="/about" component={About} />
+            <Route path="/contact" component={Contact} />
+            <Route path="/search" component={Search} />
+            <Route exact path="/post/:id" component={Post} />
+            <Route exact path="/tag/:id" component={Tag} />
             <Route component={Error}/>
           </Switch>
         </Router>
