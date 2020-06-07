@@ -86,7 +86,7 @@ export default class Search extends Component {
                                 </div>
                                 <div class="widget-content">
                                     <img src={ProfileImage} class="img-fluid" alt="pictures" onLoad={this.handleImageLoaded.bind(this)} />
-                                    <h2><a href="/about/" class="category sidebar-btn">Mukul Kumar</a></h2>
+                                    <h2><a href="#/about/" class="category sidebar-btn">Mukul Kumar</a></h2>
                                     <p>My name is Mukul Kumar, I'm a software developer and technology enthusiast from India. At the moment, I'm living in Pune..</p>
                                 </div>
                             </div>
