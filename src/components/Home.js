@@ -78,7 +78,7 @@ export default class Home extends Component {
                             <div className="col-md-12">
                                 <div className="banner">
                                     <div className="col-md-9 banner_content">
-                                        <a href="#/post/3/" className="category sidebar-btn">Django2-Angular5</a>
+                                        <a href="/post/3/" className="category sidebar-btn">Django2-Angular5</a>
                                         <p>&nbsp;</p>
 
                                         <h2><p>User registration using Angular 5 http post sevice with django rest framework.</p></h2>
@@ -102,14 +102,14 @@ export default class Home extends Component {
                                         post =>
                                             <div className="col-md-4 card_container">
                                                 <div className="card">
-                                                    <a href={'#/post/' + post.id}><img className="card-img-top" src={post.post_image} alt="Card image cap" onLoad={this.handleImageLoaded.bind(this)} /></a>
+                                                    <a href={'/post/' + post.id}><img className="card-img-top" src={post.post_image} alt="Card image cap" onLoad={this.handleImageLoaded.bind(this)} /></a>
                                                     <div className="card-body">
-                                                        <h4><a href={'#/post/' + post.id} className="card-title">{post.title}</a></h4>
+                                                        <h4><a href={'/post/' + post.id} className="card-title">{post.title}</a></h4>
                                                         <div className="card-text blog_description"><p>{post.short_description} </p></div>
                                                         <ul className="post_information">
                                                             <li><i className="fa fa-tags"></i><a href="#">{post.tag}</a></li>
                                                             <li><i className="fa fa-calendar"></i>
-                                                                <time className="post-date" datetime="2017-11-11">18/05/2019</time>
+                                                            <time className="post-date" datetime="2017-11-11">{post.created_at}</time>
                                                             </li>
                                                         </ul>
                                                     </div>
@@ -126,7 +126,7 @@ export default class Home extends Component {
                                     </div>
                                     <div className="widget-content">
                                         <img src={ProfileImage} className="img-fluid" alt="Profile" onLoad={this.handleImageLoaded.bind(this)} />
-                                        <h2><a href="#/about/" className="category sidebar-btn">Mukul Kumar</a></h2>
+                                        <h2><a href="/about/" className="category sidebar-btn">Mukul Kumar</a></h2>
                                         <p>My name is Mukul Kumar, I'm a software developer and technology enthusiast from India. At the moment, I'm living in Pune..</p>
                                     </div>
                                 </div>

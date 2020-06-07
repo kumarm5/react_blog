@@ -28,13 +28,13 @@ export default class Header extends Component {
                             <NavDropdown title="Tags" id="basic-nav-dropdown">
                                 {
                                     this.state.tags.map(
-                                        tag => <NavDropdown.Item href={ '#/tag/'+tag.id }>{tag.tag_name}</NavDropdown.Item>
+                                        tag => <NavDropdown.Item href={ '/tag/'+tag.id }>{tag.tag_name}</NavDropdown.Item>
                                     )
                                 }
                             </NavDropdown>
-                            <Nav.Link href="#/about">About me</Nav.Link>
-                            <Nav.Link href="#/contact">Contact</Nav.Link>
-                            <Nav.Link href="#/search"><i class="fa fa-search" aria-hidden="true"></i></Nav.Link>
+                            <Nav.Link href="/about">About me</Nav.Link>
+                            <Nav.Link href="/contact">Contact</Nav.Link>
+                            <Nav.Link href="/search"><i class="fa fa-search" aria-hidden="true"></i></Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>
