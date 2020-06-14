@@ -23,10 +23,9 @@ export default class Contact extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
-        const data = this.state
         axios.post('https://kumarm5.pythonanywhere.com/api/contact/', this.state)
             .then(response => {
-                if (response.status == 201) {
+                if (response.status === 201) {
                     const element = <p><i>Thank you for contacting us. We will get back to you shortly.</i></p>;
                     ReactDOM.render(element, document.getElementById('responseText'));
                 }

@@ -49,7 +49,7 @@ export default class Home extends Component {
         let imgLoadCount = this.state.imageLoadCount
         this.setState({ imageLoadCount: imgLoadCount + 1 });
 
-        if (imgLoadCount == 6) {
+        if (imgLoadCount === 6) {
             this.setState({ isLoading: false });
         }
     }
@@ -81,7 +81,7 @@ export default class Home extends Component {
                                         <a href="#/post/3/" className="category sidebar-btn">Django2-Angular5</a>
                                         <p>&nbsp;</p>
 
-                                        <h2><p>User registration using Angular 5 http post sevice with django rest framework.</p></h2>
+                                        <h2><p className="font-weight-bold">User registration using Angular 5 http post service with django rest framework.</p></h2>
 
                                         <ul className="post_information">
                                             <li><i className="fa fa-tags"></i><a href="/#">Django</a></li>
