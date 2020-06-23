@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import ProfileImage from '../assets/images/img_profile.jpg'
 import axios from 'axios';
-import Header from './Header'
-import Footer from './Footer'
 
 export default class Tag extends Component {
 
@@ -64,33 +62,11 @@ export default class Tag extends Component {
                 <div className={isLoading ? "hidden" : "fadeInTransition"}>
 
                     <div>
-                        <Header />
                         <div className="container">
                             <div className="row">
                                 <div className="col-md-12 text-center">
                                     <br />
                                     <p className="text-danger"><i>Thoughts, stories and ideas.</i></p>
-                                    <hr />
-                                </div>
-                            </div>
-
-                            <div className="row">
-                                <div className="col-md-12">
-                                    <div className="banner">
-                                        <div className="col-md-9 banner_content">
-                                            <a href="#/post/3/" className="category sidebar-btn">Django2-Angular5</a>
-                                            <p>&nbsp;</p>
-
-                                            <h2><p>User registration using Angular 5 http post sevice with django rest framework.</p></h2>
-
-                                            <ul className="post_information">
-                                                <li><i className="fa fa-tags"></i><a href="/#">Django</a></li>
-                                                <li><i className="fa fa-calendar"></i>
-                                                    <time className="post-date" datetime="2017-11-11">14/04/2019</time>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
                                     <hr />
                                 </div>
                             </div>
@@ -148,7 +124,6 @@ export default class Tag extends Component {
                             </div>
 
                         </div>
-                        <Footer />
                     </div>
                 </div>
             </div>

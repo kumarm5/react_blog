@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 import axios from 'axios';
-import Header from './Header';
-import Footer from './Footer';
 import ProfileImage from '../assets/images/img_profile.jpg'
 import Disqus from "disqus-react"
 
@@ -48,7 +46,6 @@ export default class Post extends Component {
                     <div id="status"><i class="fa fa-4x fa-spinner fa-spin" aria-hidden="true"></i></div>
                 </div>
                 <div className={isLoading ? "hidden" : "fadeInTransition"}>
-                    <Header />
                     <div className="container">
                         <div className="row">
                             <div className="col-md-12 text-center">
@@ -97,7 +94,6 @@ export default class Post extends Component {
                             </div>
                         </div>
                     </div>
-                    <Footer />
                 </div>
             </div>
         )

@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import ProfileImage from '../assets/images/img_profile.jpg'
 import axios from 'axios';
-import Header from './Header'
-import Footer from './Footer'
 import 'bootstrap/dist/css/bootstrap.css';
 import '../assets/style/style.css'
 
@@ -72,7 +70,6 @@ export default class Home extends Component {
                 <div className={isLoading ? "hidden" : "fadeInTransition"}>
 
                     <div>
-                        <Header />
                         <div className="container">
                             <div className="row">
                                 <div className="col-md-12 text-center">
@@ -176,7 +173,6 @@ export default class Home extends Component {
                             </div>
 
                         </div>
-                        <Footer />
                     </div>
                 </div>
             </div>

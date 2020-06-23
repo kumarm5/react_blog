@@ -7,11 +7,14 @@ import Search from './components/Search';
 import Post from './components/Post';
 import Error from './components/Error';
 import Tag from './components/Tag';
+import Header from './components/Header'
+import Footer from './components/Footer'
 
 class App extends Component {
   render() {
     return (
       <React.Fragment>
+        <Header />
         <Router>
           <Switch>
             <Route exact path="/" component={Home} />
@@ -23,6 +26,7 @@ class App extends Component {
             <Route component={Error}/>
           </Switch>
         </Router>
+        <Footer />
       </React.Fragment>
     );
   }

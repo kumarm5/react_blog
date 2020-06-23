@@ -23,7 +23,7 @@ export default class Header extends Component {
                     <Navbar.Brand href="/">Blog</Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav className="ml-auto">
+                        <Nav defaultActiveKey="/" className="ml-auto">
                             <Nav.Link href="/">Home</Nav.Link>
                             <NavDropdown title="Tags" id="basic-nav-dropdown">
                                 {

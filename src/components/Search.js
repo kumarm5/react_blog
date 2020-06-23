@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 import ProfileImage from '../assets/images/img_profile.jpg'
-import Header from './Header'
-import Footer from './Footer'
 import axios from 'axios';
 
 export default class Search extends Component {
@@ -45,7 +43,6 @@ export default class Search extends Component {
                     <div id="status"><i class="fa fa-4x fa-spinner fa-spin" aria-hidden="true"></i></div>
                 </div>
                 <div className={isLoading ? "hidden" : "fadeInTransition"}>
-                <Header />
                 <div class="container">
 
                     <div class="row">
@@ -96,7 +93,6 @@ export default class Search extends Component {
                         </div>
                     </div>
                 </div>
-                <Footer />
                 </div>
             </div>
         )

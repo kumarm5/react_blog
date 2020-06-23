@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import Header from './Header';
-import Footer from './Footer';
 
 export default class Error extends Component {
 
@@ -24,7 +22,6 @@ export default class Error extends Component {
                     <div id="status"><i class="fa fa-4x fa-spinner fa-spin" aria-hidden="true"></i></div>
                 </div>
                 <div className={isLoading ? "hidden" : "fadeInTransition"}>
-                    <Header />
                     <div className="container">
                         <div className="row">
                             <div className="col-md-12 text-center">
@@ -36,7 +33,6 @@ export default class Error extends Component {
                             </div>
                         </div>
                     </div>
-                    <Footer />
                 </div>
             </div>
         )

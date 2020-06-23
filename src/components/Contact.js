@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import Header from './Header'
-import Footer from './Footer'
 import axios from 'axios';
 import ProfileImage from '../assets/images/img_profile.jpg'
 import ReactDOM from 'react-dom';
@@ -51,7 +49,6 @@ export default class Contact extends Component {
                     <div id="status"><i class="fa fa-4x fa-spinner fa-spin" aria-hidden="true"></i></div>
                 </div>
                 <div className={isLoading ? "hidden" : "fadeInTransition"}>
-                    <Header />
                     <div className="container">
                         <div className="row">
                             <div className="col-md-12 text-center">
@@ -107,7 +104,6 @@ export default class Contact extends Component {
                         </div>
 
                     </div>
-                    <Footer />
                 </div>
             </div>
         )

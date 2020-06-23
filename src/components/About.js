@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 import ProfileImage from '../assets/images/img_profile.jpg'
-import Header from './Header'
-import Footer from './Footer'
 
 export default class About extends Component {
 
@@ -25,7 +23,6 @@ export default class About extends Component {
                     <div id="status"><i class="fa fa-4x fa-spinner fa-spin" aria-hidden="true"></i></div>
                 </div>
                 <div className={isLoading ? "hidden" : "fadeInTransition"}>
-                    <Header />
                     <div className="container">
                         <div className="row">
                             <div className="col-md-12 text-center">
@@ -59,7 +56,6 @@ export default class About extends Component {
                         </div>
 
                     </div>
-                    <Footer />
                 </div>
             </div>
         )
