@@ -20,7 +20,7 @@ export default class Header extends Component {
         return (
             <div>
                 <Navbar variant="dark" expand="lg">
-                    <Navbar.Brand href="/">Blog</Navbar.Brand>
+                    <Navbar.Brand href="/"><b><u>RC</u></b></Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav defaultActiveKey="/" className="ml-auto">
