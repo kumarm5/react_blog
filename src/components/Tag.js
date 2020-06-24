@@ -18,7 +18,8 @@ export default class Tag extends Component {
             total_pages: '',
             page_number: '',
             previous_page_num: '',
-            next_page_num: ''
+            next_page_num: '',
+            tag_name: ''
         };
     }
 
@@ -34,7 +35,8 @@ export default class Tag extends Component {
                     page_number: res.data.page_number,
                     previous_page_num: res.data.page_number - 1,
                     next_page_num: res.data.page_number + 1,
-                    tag_id: tag
+                    tag_id: tag,
+                    tag_name: res.data.results[0] ? res.data.results[0].tag : ''
                 });
             })
     }
@@ -42,6 +44,25 @@ export default class Tag extends Component {
     componentDidMount() {
         const { id } = this.props.match.params
         this.makeHttpRequestWithPage(1, id)
+    }
+
+    // static getDerivedStateFromProps(nextProps, prevState) {
+    //     if (nextProps.match.params.id !== prevState.tag_id) {
+    //         const currentId = nextProps.match.params.id;
+    //         this.setState({
+    //             posts: result[0],
+    //             tag_id: currentId,
+    //             result
+    //         })
+    //     }
+    //     return null;
+    // }
+
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.match.params.id !== this.props.match.params.id) {
+            const currentId = nextProps.match.params.id;
+            this.makeHttpRequestWithPage(1, currentId)
+        }
     }
 
     handleImageLoaded() {
@@ -53,7 +74,7 @@ export default class Tag extends Component {
     }
 
     render() {
-        const { posts, count, next, previous, total_pages, page_number, previous_page_num, next_page_num, isLoading, tag_id } = this.state
+        const { posts, count, next, previous, total_pages, page_number, previous_page_num, next_page_num, isLoading, tag_id, tag_name } = this.state
         return (
             <div>
                 <div className={isLoading ? "preloader" : "hidden"}>
@@ -73,6 +94,8 @@ export default class Tag extends Component {
 
                             <div className="row">
                                 <div className="col-md-9">
+                                    <h3 class="text-center">Category: { tag_name }</h3>
+                                    <br />
                                     {
                                         posts.map(
                                             post =>
