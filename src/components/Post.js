@@ -37,9 +37,9 @@ export default class Post extends Component {
 
         const disqusShortname = "readabilitycount" //found in your Disqus.com dashboard
         const disqusConfig = {
-            url: "https://readabilitycounts.co.in/#/", //this.props.pageUrl
+            url: "https://readabilitycounts.co.in/#/post/"+id, //this.props.pageUrl
             identifier: id, //this.props.uniqueId
-            title: "Post" //this.props.title
+            title: "Post "+id //this.props.title
         }
 
         return (
