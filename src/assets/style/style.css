@@ -11,7 +11,7 @@ body{
 }
 
 #banner{
-    background-image: url('https://readabilitycounts.co.in/static/media/banner.e747cea2.jpg');
+    background-image: url('../images/banner.jpg');
     background-position: 50%;
     background-repeat: no-repeat;
     background-size: cover;
