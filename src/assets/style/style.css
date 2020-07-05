@@ -10,11 +10,11 @@ body{
     color: #fff;
 }
 
-.banner{
-    background-image: url('../images/banner.jpg');
+#banner{
+    background-image: url('http://localhost:3000/static/media/banner.e747cea2.jpg');
     background-position: 50%;
     background-repeat: no-repeat;
-    background-size: cover;    
+    background-size: cover;
 }
 
 .banner_content{

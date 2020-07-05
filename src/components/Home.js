@@ -47,15 +47,31 @@ export default class Home extends Component {
             })
     }
 
+    getBgUrl = (el) => {
+        var bg = "";
+        if (el.currentStyle) { // IE
+            bg = el.currentStyle.backgroundImage;
+        } else if (document.defaultView && document.defaultView.getComputedStyle) { // Firefox
+            bg = document.defaultView.getComputedStyle(el, "").backgroundImage;
+        } else { // try and get inline style
+            bg = el.style.backgroundImage;
+        }
+        return bg.replace(/url\(['"]?(.*?)['"]?\)/i, "$1");
+    }
+
     componentDidMount() {
+        var image = document.createElement('img');
+        image.src = this.getBgUrl(document.getElementById('banner'));
+        image.onload = this.handleImageLoaded()
+
         this.makeHttpRequestWithPage(1)
     }
 
-    handleImageLoaded() {
+    handleImageLoaded = () => {
         let imgLoadCount = this.state.imageLoadCount
         this.setState({ imageLoadCount: imgLoadCount + 1 });
 
-        if (imgLoadCount === 6) {
+        if (imgLoadCount === 7) {
             this.setState({ isLoading: false });
         }
     }
@@ -81,7 +97,7 @@ export default class Home extends Component {
 
                             <div className="row">
                                 <div className="col-md-12">
-                                    <div className="banner">
+                                    <div id="banner">
                                         {
                                             latest_blog.map(
                                                 blog =>
@@ -150,7 +166,7 @@ export default class Home extends Component {
                                                     </div>
                                                     <div class="widget-content">
                                                         <img src={blog.post_image} class="img-fluid" />
-                                                        <h2><a href="/post/13/" class="category sidebar-btn">{blog.title}</a></h2>
+                                                        <h2><a href={'#/post/' + blog.id} class="category sidebar-btn">{blog.title}</a></h2>
                                                         <p>{blog.short_description}</p>
                                                     </div>
                                                 </div>
