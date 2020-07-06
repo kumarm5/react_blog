@@ -69,7 +69,7 @@ export default class Post extends Component {
                                 </div>
                                 <br />
                                 <hr />
-                                <div className="float-right">
+                                {/* <div className="float-right">
                                     <span><strong>Share this post </strong></span>
                                     <a href="javascript:void(0);" className="social_icon"><i className="fa fa-2x fa-facebook-square" aria-hidden="true"></i></a>
                                     <a href="javascript:void(0);" className="social_icon"><i className="fa fa-2x fa-twitter-square" aria-hidden="true"></i></a>
@@ -79,7 +79,7 @@ export default class Post extends Component {
                                 <Disqus.DiscussionEmbed
                                 shortname={disqusShortname}
                                 config={disqusConfig}
-                                />
+                                /> */}
                             </div>
                             <div className="col-md-3 sidebar">
                                 <div className="widget_content">

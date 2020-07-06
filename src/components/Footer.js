@@ -68,7 +68,7 @@ export default class Footer extends Component {
                                             <div class="form-group">
                                                 <input type="text" class="form-control" id="email" name="email" value={email} placeholder="Email Address" onChange={this.handleInputChange} />
                                             </div>
-                                            <button type="submit" class="btn btn-danger">Subscribe</button>
+                                            <button type="submit" class="btn btn-danger subscribe-btn">Subscribe</button>
                                         </form>
                                         <div id="responseText"></div>
                                     </div>
