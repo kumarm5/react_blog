@@ -75,7 +75,7 @@ export default class Footer extends Component {
 
                                     <div class="col-md-4 footer_section">
                                         <h3>ABOUT ME</h3>
-                                        <p>My name is Mukul Kumar, I'm a software developer and technology enthusiast from India. At the moment, I'm living in Pune, Maharashtra. I have completed MCA from Pune University... <a class="category" href="/about/">Read More</a></p>
+                                        <p>My name is Mukul Kumar, I'm a software developer and technology enthusiast from India. At the moment, I'm living in Pune, Maharashtra. I have completed MCA from Pune University... <a class="category" href="#/about/">Read More</a></p>
                                     </div>
 
                                     <div class="col-md-4 footer_section">
